@@ -1,10 +1,3 @@
-/*
- * 
- * Maked by coco
- * Update Info : Previously Add Queue by snake control.
- * Backup Date : 2017.01.19
- * 
- * */
 
 import java.awt.*;
 import java.awt.event.KeyAdapter;
@@ -17,12 +10,12 @@ import java.util.Queue;
 
 public class SnakeGameFrame extends JFrame{
 	
-	Vector<TailSnake> vTs = new Vector<TailSnake>(); //n°³ÀÇ ²¿¸®¸¦ ±×¸®´Â º¤ÅÍ
-	Vector<Snake> vS = new Vector<Snake>(); //¸Ó¸® 1°³¸¸ ±×¸²
+	Vector<TailSnake> vTs = new Vector<TailSnake>(); //nê°œì˜ ê¼¬ë¦¬ë¥¼ ê·¸ë¦¬ëŠ” ë²¡í„°
+	Vector<Snake> vS = new Vector<Snake>(); //ë¨¸ë¦¬ 1ê°œë§Œ ê·¸ë¦¼
 	
 	
-	Queue<Integer> pX = new LinkedList<Integer>(); //¾Õ ²¿¸®ÀÇ xÁÂÇ¥ 
-	Queue<Integer> pY = new LinkedList<Integer>(); //¾Õ ²¿¸®ÀÇ yÁÂÇ¥
+	Queue<Integer> pX = new LinkedList<Integer>(); //ì• ê¼¬ë¦¬ì˜ xì¢Œí‘œ 
+	Queue<Integer> pY = new LinkedList<Integer>(); //ì• ê¼¬ë¦¬ì˜ yì¢Œí‘œ
 	
 	
 	Container cp = getContentPane();
@@ -45,9 +38,9 @@ public class SnakeGameFrame extends JFrame{
 		jp.addKeyListener(new MyKeyListener(jp));
 		
 		setSize(500,500);
-		setResizable(false); //ÇÁ·¹ÀÓ Å©±â °íÁ¤
+		setResizable(false); //í”„ë ˆì„ í¬ê¸° ê³ ì •
 		setVisible(true);
-		setLocationRelativeTo(null); //ÇÁ·¹ÀÓ À§Ä¡ °¡¿îµ¥
+		setLocationRelativeTo(null); //í”„ë ˆì„ ìœ„ì¹˜ ê°€ìš´ë°
 		jp.requestFocus();
 	}
 	
@@ -193,7 +186,7 @@ public class SnakeGameFrame extends JFrame{
 				System.out.println("Snake : " + s.getX() +","+ s.getY());
 				System.out.println("Eat : " + s.getEatX() + "," + s.getEatY());
 				System.out.println("---------------------");
-				if(s.checkPoint()){ //¸Ô¾úÀ¸¸é
+				if(s.checkPoint()){ //ë¨¹ì—ˆìœ¼ë©´
 					System.out.println(s.checkPoint());
 					creatNewPoint(); 
 					s.setEatCount(1);
@@ -217,11 +210,11 @@ public class SnakeGameFrame extends JFrame{
 	void creatTail() {
 		if(s.getEatcount() == 1){
 			/*
-			 * 1. ²¿¸® 1°³ »ı¼º
-			 * 2. ²¿¸®º¤ÅÍ¿¡ ÀúÀå
-			 * 3. ¸Ó¸® È¹µæ
-			 * 4. ¸Ó¸®ÀÇ x,yÁÂÇ¥¸¦ ¸¸µç ²¿¸® x,y¿¡ ´ëÀÔ
-			 * 5. ²¿¸®°¹¼ö 1°³ Áõ°¡
+			 * 1. ê¼¬ë¦¬ 1ê°œ ìƒì„±
+			 * 2. ê¼¬ë¦¬ë²¡í„°ì— ì €ì¥
+			 * 3. ë¨¸ë¦¬ íšë“
+			 * 4. ë¨¸ë¦¬ì˜ x,yì¢Œí‘œë¥¼ ë§Œë“  ê¼¬ë¦¬ x,yì— ëŒ€ì…
+			 * 5. ê¼¬ë¦¬ê°¯ìˆ˜ 1ê°œ ì¦ê°€
 			 * 
 			 * */
 			
@@ -238,11 +231,11 @@ public class SnakeGameFrame extends JFrame{
 		}
 		else if(s.getEatcount() > 1){
 			/*
-			 * 1. ²¿¸® 1°³ »ı¼º
-			 * 2. ²¿¸®º¤ÅÍ¿¡ ÀúÀå
-			 * 3. ÀÌÀü²¿¸® È¹µæ
-			 * 4. ÀÌÀü²¿¸®ÀÇ x,yÁÂÇ¥¸¦ ÇöÀç ²¿¸® x,y¿¡ ´ëÀÔ
-			 * 5. ²¿¸® °¹¼ö 1°³ Áõ°¡
+			 * 1. ê¼¬ë¦¬ 1ê°œ ìƒì„±
+			 * 2. ê¼¬ë¦¬ë²¡í„°ì— ì €ì¥
+			 * 3. ì´ì „ê¼¬ë¦¬ íšë“
+			 * 4. ì´ì „ê¼¬ë¦¬ì˜ x,yì¢Œí‘œë¥¼ í˜„ì¬ ê¼¬ë¦¬ x,yì— ëŒ€ì…
+			 * 5. ê¼¬ë¦¬ ê°¯ìˆ˜ 1ê°œ ì¦ê°€
 			 * 
 			 * */
 			TailSnake tail = new TailSnake();
